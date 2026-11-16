@@ -36,7 +36,6 @@ flights %>%
     total_flights = n()
   ) %>%
   arrange(desc(total_flights))
-  View(flights)
 
 # Part 2: Intermediate exercises
 # Question 4 — Creating a delay category
@@ -126,7 +125,7 @@ flights %>%
   filter(!is.na(arr_delay)) %>% 
   group_by(carrier) %>% 
   summarise(
-    total_fights = n(),
+    total_flights = n(),
     on_time_percentage = mean(arr_delay <=0)*100,
     .groups = 'drop'
   ) %>% 
@@ -171,5 +170,5 @@ flights %>%
   ungroup() %>% 
   filter(total_flights > 1000,
          avg_dd > 10,
-         avg_ad > 5,
+         avg_ad > 5
          )
